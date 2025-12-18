@@ -50,6 +50,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 <p align="center">
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
 </p>
+
 A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, especializada em processar pagamentos globais de forma rápida, segura e interoperável.
 O conceito **“100cep”** remete à ausência de barreiras de cidade, estado ou país, reforçando o foco em análises por região, método de pagamento e risco de chargeback.
 
