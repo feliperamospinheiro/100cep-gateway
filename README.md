@@ -1,4 +1,4 @@
-<h1 align="center">MVP de Engenharia de Dados</h1>
+h1 align="center">🏦 100cep Gateway — MVP de Engenharia de Dados</h1>
 
 <p align="center">
   <a href="https://shields.io/">
@@ -26,175 +26,199 @@
     <img src="https://img.shields.io/badge/GeoPandas-Geospatial%20Data-green" alt="GeoPandas">
   </a>
 </p>
+<p align="center">
+  ```
+  <em>Projeto de sprint da Pós-graduação em Data Science & Analytics (PUC-Rio) focado em engenharia de dados e arquitetura Lakehouse.</em>
+  ```
+</p>
 
-O MVP simula o pipeline transacional da 100cep Gateway, incluindo ingestão, processamento, conciliação e chargebacks, seguindo padrões de adquirência e infraestrutura financeira.
+***
 
-Pipeline de dados construído no Databricks para simular o processamento de pedidos, pagamentos e chargebacks de uma empresa fictícia do setor de pagamentos, a **100cep Gateway**. 
+## 🎯 Visão geral
 
-O projeto segue boas práticas de Data Lakehouse, utilizando Delta Lake, Unity Catalog e a arquitetura **Bronze → Silver → Gold**.
+Projeto desenvolvido como parte da **sprint de Engenharia de Dados** do programa de **Pós-graduação em Data Science \& Analytics da PUC-Rio**, pensado para compor o portfólio com um caso completo de pipeline analítico em ambiente de Data Lakehouse.
+O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, processamento, conciliação e chargebacks, com foco em boas práticas de modelagem, governança e observabilidade de dados.
 
----
-<h2 align="center">100cep Gateway</h2>
+**Este repositório demonstra:**
 
-<p align="center"> <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%"></p>
+- Arquitetura **Lakehouse** com camadas **Bronze → Silver → Gold**.
+- Construção de um **esquema estrela** para análise de risco, antifraude e receita.
+- Documentação técnica (catálogo, ETL, análises, autoavaliação) em formato pronto para portfólio.
 
-A 100cep Gateway é uma empresa de infraestrutura de pagamentos borderless, especializada em processar pagamentos globais de forma rápida, segura e interoperável.Nosso objetivo é permitir **transações rápidas**, **seguras** e **sem fronteiras** — afinal, somos _100cep_: sem _cidade_, _estado_ ou _país_ limitando o fluxo dos pagamentos.
+***
 
----
-<h2 align="center">Objetivo do Projeto</h2>
+## 🏛️ Sobre a 100cep Gateway
 
-Este MVP tem como objetivo construir um pipeline de engenharia de dados completo para:
+<p align="center">
+  <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
+</p>
+A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, especializada em processar pagamentos globais de forma rápida, segura e interoperável.
+O conceito **“100cep”** remete à ausência de barreiras de cidade, estado ou país, reforçando o foco em análises por região, método de pagamento e risco de chargeback.
 
-- ingerir dados transacionais de e-commerce;  
-- padronizar, relacionar e organizar entidades (pedidos, pagamentos, itens, clientes, sellers);  
-- gerar camadas analíticas para monitoramento de risco, antifraude e chargebacks;  
-- responder perguntas de negócio típicas de empresas de pagamentos, adquirentes e gateways.
+***
 
-O foco central é entender:
+## 🎓 Contexto acadêmico e objetivos
 
-> **Como a 100cep Gateway pode monitorar, conciliar e antecipar ocorrências de pagamentos e chargebacks utilizando dados transacionais?**
+Este projeto foi desenvolvido no contexto da pós-graduação em **Data Science \& Analytics (PUC-Rio)**, com foco em engenharia de dados aplicada.
 
-Todas as perguntas de negócio estão documentadas em:  
-📄 `/docs/business_questions.md`
+**Objetivos principais:**
 
----
+- **Pipeline transacional**
+Simular o fluxo de uma adquirente/gateway, ingerindo e organizando dados de pedidos, pagamentos, itens, clientes e sellers.
+- **Visões analíticas de risco**
+Criar camadas analíticas para monitorar chargebacks, GMV, ticket médio e métricas por método de pagamento, seller e localização.
+- **Portfólio técnico**
+Entregar código + documentação, evidenciando decisões de arquitetura, qualidade de dados e modelagem dimensional.
 
-<h2 align="center">Coleta dos Dados</h2>
+***
 
-Os dados utilizados foram obtidos no Kaggle (**Brazilian E-Commerce Public Dataset by Olist**), amplamente usado em estudos e projetos educacionais.
+## 🧱 Stack técnica
 
-Processo adotado:
+- **Plataforma de dados:** Databricks (Spark, Delta Lake, Unity Catalog).
+- **Linguagem:** Python.
+- **Processamento:** Apache Spark (SQL / DataFrames) e Pandas para análises pontuais.
+- **Modelagem:** Arquitetura Medallion (Bronze, Silver, Gold) e esquema estrela.
+- **Visualização:** Seaborn / Matplotlib e ferramentas de BI consumindo tabelas Gold.
 
-1. Download manual dos arquivos CSV.
-2. Upload para o **Unity Catalog Volumes** no Databricks, garantindo:
-   - armazenamento em nuvem,
-   - versionamento pelo UC,
-   - padronização da ingestão no nível Bronze.
+***
 
-⚠ Não houve uso de web scraping ou dados sensíveis.  
-⚠ Nenhum dado interno ou confidencial de empresas reais foi utilizado.
+## 📦 Dados utilizados
 
-Evidências (screenshots) estão na pasta: `/docs/screenshots/coleta`.
+Os dados são baseados no **Brazilian E-Commerce Public Dataset by Olist**, amplamente utilizado em estudos de ciência e engenharia de dados.
+O projeto também utiliza um dataset sintético de chargebacks para simular risco e fraude, sem qualquer dado sensível real.
 
----
+**Fluxo de ingestão:**
 
-<h2 align="center">Modelagem de Dados</h2>
+1. Download dos arquivos CSV a partir do Kaggle.
+2. Upload para **Unity Catalog Volumes** no Databricks, compondo a área de *staging* antes da Bronze.
 
-Foi adotado um modelo **Lakehouse** com tabelas **flat por conceito**:
+> ⚠ Nenhum dado pessoal identificável (PII) real é utilizado.
+> ⚠ Escopo 100% educacional e de portfólio.
 
-### 🥉 Bronze
-- Armazenamento dos arquivos *exatamente como chegaram*.
-- Sem limpeza, sem inferência, sem padronização.
-- Garantia de auditabilidade.
+***
 
-### 🥈 Silver
-- Padronização de tipos
-- Deduplicação
-- Tratamento de nulos
-- Correção de colunas derivadas
-- Relação entre entidades (join lógico)
+## 🏗️ Arquitetura e modelagem
 
-### 🥇 Gold
-- Tabelas analíticas orientadas ao negócio
-- KPIs de chargebacks, GMV, ticket médio
-- Modelos por método de pagamento, seller e região
+O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetura **Medallion** (Bronze, Silver, Gold), com governança via Unity Catalog.
 
-### 📄 Catálogo de Dados
-Foi criado um **Data Catalog** contendo:
+### 🥉 Bronze · dados brutos
 
-- Nome da coluna  
-- Tipo de dado  
-- Domínio esperado  
-- Valores mínimos e máximos (numéricos)  
-- Categorias possíveis (categóricos)  
-- Descrição funcional  
-- Camada de origem  
-- Linhagem Bronze → Silver → Gold
+- CSVs armazenados em Delta quase “como chegaram”.
+- Foco em auditabilidade e possibilidade de reprocessamento.
 
-Arquivo: `/docs/data_catalog.md`
 
----
-<h2 align="center">Carga (ETL / ELT)</h2>
+### 🥈 Silver · dados tratados
 
-A carga foi estruturada em três passos principais:
+- Padronização de tipos e normalização de chaves.
+- Tratamento de nulos e deduplicação.
+- Criação de tabelas temáticas (pedidos, pagamentos, clientes, itens).
 
-### 1) Ingestão (Bronze)
-- Leitura dos CSVs diretamente do Volume UC  
-- Persistência em Delta  
-- Normalização de nomes de colunas
 
-### 2) Transformação (Silver)
-- Conversão de tipos datetime  
-- Correção de colunas categóricas  
-- Padronização de campos numéricos  
-- Exclusão de duplicadas  
-- Consolidação de tabelas relacionadas
+### 🥇 Gold · modelo analítico
 
-### 3) Modelagem Analítica (Gold)
-- Tabelas agregadas  
-- Métricas de operação e risco  
-- Junções entre pedidos, pagamentos e chargebacks
+- Dimensões: clientes, vendedores, pagamentos, data, geolocalização, chargebacks.
+- Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
+- Modelagem dos dados em Star Schema.
 
-Documentação do ETL: `/docs/etl_documentation.md`  
-Evidências de execução: `/docs/screenshots/carga`
+<p align="center">
+  <img src="./docs/images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
+</p>
 
----
-<h2 align="center">Análises Realizadas</h2>
+***
 
-## 🔍 a) Qualidade dos Dados
-Foi feita uma análise de:
+## 📚 Catálogo de dados
 
-- valores ausentes  
-- valores fora do domínio  
-- inconsistências entre tabelas  
-- dados duplicados  
-- erros de formato  
+O projeto inclui um **Data Catalog** documentando:
 
-As correções foram aplicadas na camada Silver.  
-Evidências em `/docs/screenshots/data_quality`.
+- Nome e tipo de cada coluna.
+- Domínio esperado, faixas de valores e categorias.
+- Descrição funcional e camada de origem.
+- Linhagem Bronze → Silver → Gold.
 
----
+Arquivo de referência: `docs/catalogo.md`.
 
-## 🧠 b) Solução do Problema (Perguntas de Negócio)
+***
 
-As análises Gold respondem perguntas como:
+## 🔄 Pipeline de carga (ETL / ELT)
 
-- **Qual o método de pagamento mais utilizado pelos clientes da 100cep Gateway?** 
-- **Qual o histórico de faturamento do ano de 2017?**  
-- **Qual a proporção de pedidos com e sem solicitação de chargeback?**  
-- **Quais métodos de pagamento têm maior risco de chargeback?**  
-- **Quais estados apresentam as maiores taxas de chargeback?**  
+A carga foi organizada em etapas claras, refletindo as camadas do Lakehouse.
 
-As respostas detalhadas estão em:  
-📄 `/docs/analysis.md`
+1. **Ingestão — Bronze**
+    - Leitura dos CSV a partir do Volume do Unity Catalog.
+    - Persistência em tabelas Delta `*_raw`.
+    - Normalização básica de nomes de colunas.
+2. **Transformação — Silver**
+    - Limpeza, tipagem, tratamento de nulos e deduplicação.
+    - Criação de relacionamentos entre pedidos, pagamentos, itens, clientes e sellers.
+3. **Modelagem — Gold**
+    - Construção das dimensões e da `fato_transacoes`.
+    - Preparação de visões finais para consumo em BI e notebooks analíticos.
 
----
-<h2 align="center">Autoavaliação</h2>
+Regras detalhadas de transformação: `docs/documentacao_etl.md`.
 
-Discussão final sobre:
+***
 
-- objetivos atingidos e não atingidos;  
-- dificuldades enfrentadas;  
-- limitações naturais do MVP;  
-- melhorias e próximos passos (streaming, automação, dashboards, monitoramento).
+## ▶️ Como executar
 
-Arquivo: `/docs/self_assessment.md`
+> Ajuste nomes de catálogo/schema e caminhos conforme o seu workspace Databricks.
 
----
+1. **Configurar ambiente**
+    - Criar o catálogo `100cep_gateway` (ou adaptar nos scripts).
+    - Configurar Unity Catalog e Volumes para staging.
+2. **Rodar os scripts em ordem**
+    - `./.databricks/pipeline/notebooks/01_preparacao.ipynb`
+    - `./.databricks/pipeline/notebooks/02_download.ipynb`
+    - `./.databricks/pipeline/notebooks/03_bronze.ipynb`
+    - `./.databricks/pipeline/notebooks/04_silver.ipynb`
+    - `./.databricks/pipeline/notebooks/05_gold.ipynb`
+    - `./.databricks/pipeline/notebooks/06/qualidade.ipynb`
+    - `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
+    - `./.databricks/pipeline/notebooks/08_catalogo.ipynb`
 
-<h2 align="center">Autor</h2>
+3. **Explorar análises**
+    - Abrir `./.databricks/pipeline/notebooks/07_perguntas.ipynb` e notebooks analíticos para visualizar KPIs e responder às perguntas de negócio.
 
-**Felipe Pinheiro**  
+***
 
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:felipervmospinheiro@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/feliperamospinheiro)
+## 🔍 Perguntas de negócio
 
-<h2 align="center">Creditos</h2>
+A camada Gold foi desenhada para responder perguntas típicas de risco, antifraude e receita em um gateway de pagamentos.
 
-Dataset: *[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)*
+1. Qual o método de pagamento mais utilizado pelos clientes da 100cep Gateway?
+2. Qual o histórico de faturamento ao longo do período analisado?
+3. Qual a proporção de pedidos com e sem solicitação de chargeback?
+4. Quais métodos de pagamento apresentam maior risco de chargeback?
+5. Quais estados ou regiões concentram as maiores taxas de chargeback?
 
-Autor: Olist & André Sionek
+Detalhes das análises: `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
 
-DOI Citation: *[DOI](https://doi.org/10.34740/kaggle/dsv/195341)*
+***
 
-Licença: *[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*
+## 📝 Autoavaliação e próximos passos
+
+Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões técnicas e acadêmicas.
+
+- O que foi cumprido dentro do escopo da sprint.
+- Principais desafios (performance, modelagem, ferramentas).
+- Ideias de evolução:
+    - ingestão em streaming;
+    - orquestração com jobs;
+    - testes automatizados e data quality contínuo;
+    - dashboards em produção.
+
+Arquivo: `docs/autoavalicao.md`.
+
+***
+
+## 👤 Autor
+
+**Felipe Pinheiro** — projeto desenvolvido no contexto da Pós-graduação em Data Science & Analytics (PUC-Rio).
+
+***
+
+## 📎 Créditos
+
+Dataset: *[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)* — Olist \& André Sionek.
+DOI: *[10.34740/kaggle/dsv/195341](https://doi.org/10.34740/kaggle/dsv/195341)* — Licença *[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*.
+
+<div align="center">⁂</div>
