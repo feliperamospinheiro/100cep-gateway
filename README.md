@@ -1,4 +1,4 @@
-h1 align="center">🏦 100cep Gateway — MVP de Engenharia de Dados</h1>
+<h1> align="center">🏦 100cep Gateway — MVP de Engenharia de Dados</h1>
 
 <p align="center">
   <a href="https://shields.io/">
@@ -27,9 +27,7 @@ h1 align="center">🏦 100cep Gateway — MVP de Engenharia de Dados</h1>
   </a>
 </p>
 <p align="center">
-  ```
   <em>Projeto de sprint da Pós-graduação em Data Science & Analytics (PUC-Rio) focado em engenharia de dados e arquitetura Lakehouse.</em>
-  ```
 </p>
 
 ***
