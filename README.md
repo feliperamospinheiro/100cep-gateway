@@ -106,7 +106,7 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 
 ***
 
-## Arquitetura e modelagem
+<h2 align="center">Arquitetura e modelagem</h2>
 
 O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetura **Medallion** (Bronze, Silver, Gold), com governança via Unity Catalog.
 
