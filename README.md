@@ -55,10 +55,10 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 │   ├── 📁 ai_dataset # contém o dataset gerado pelo modelo OpenAI 5.0
 │   └── 📁 olist_dataset # contém os datasets Brazilian E-Commerce Public Dataset by Olist
 ├── 📁 dbdiagram # contém o código realizado no dbdiagram.io
-├──  📁 images
-│    ├── 📁 databricks # evidências do databricks
-│    ├── 📁 dbdiagram # schema do dbdiagram.io
-│    └── 📁 logo # logo da 100cep Gateway
+├── 📁 images
+│   ├── 📁 databricks # evidências do databricks
+│   ├── 📁 dbdiagram # schema do dbdiagram.io
+│   └── 📁 logo # logo da 100cep Gateway
 ```
 
 
