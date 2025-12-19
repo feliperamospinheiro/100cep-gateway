@@ -91,11 +91,11 @@ Este projeto foi desenvolvido no contexto da pós-graduação em **Data Science 
 
 **Objetivos principais:**
 
-- **Pipeline transacional**
+- **Pipeline transacional:**
 Simular o fluxo de uma adquirente/gateway, ingerindo e organizando dados de pedidos, pagamentos, itens, clientes e sellers.
-- **Visões analíticas de risco**
+- **Visões analíticas de risco:**
 Criar camadas analíticas para monitorar chargebacks, GMV, ticket médio e métricas por método de pagamento, seller e localização.
-- **Portfólio técnico**
+- **Portfólio técnico:**
 Entregar código + documentação, evidenciando decisões de arquitetura, qualidade de dados e modelagem dimensional.
 
 ***
