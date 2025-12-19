@@ -1,4 +1,4 @@
-# 🏗️ Documentação do ETL
+<h1 align="center">Documentação do ETL</h1>
 
 Este documento descreve o processo de ETL do projeto **100cep Gateway**, estruturado na arquitetura de camadas **Bronze, Silver e Gold** sobre o Unity Catalog do Databricks, utilizando o dataset público de e‑commerce brasileiro da Olist e um dataset complementar de chargebacks.
 
