@@ -41,7 +41,28 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 - Arquitetura **Lakehouse** com camadas **Bronze → Silver → Gold**.
 - Construção de um **esquema estrela** para análise de risco, antifraude e receita.
-- Documentação técnica (catálogo, ETL, análises, autoavaliação) em formato pronto para portfólio.
+- Documentação técnica (catálogo, ETL, análises, autoavaliação) em formato pronto para portfólio. 
+
+**Organização do repositório:**
+
+```
+📁 100cep-gateway
+├── 📁 .databricks
+│   └── 📁 pipeline
+│       ├── 📁 html
+│       └── 📁 notebooks
+├── 📁 .vscode
+├── 📁 datasets
+│   ├── 📁 ai_dataset
+│   └── 📁 olist_dataset
+├── 📁 dbdiagram
+├── 📁 docs
+│   └── 📁 images
+│       ├── 📁 databricks
+│       ├── 📁 dbdiagram
+│       └── 📁 logo
+```
+
 
 ***
 
