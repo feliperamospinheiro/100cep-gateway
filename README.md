@@ -116,7 +116,7 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Foco em auditabilidade e possibilidade de reprocessamento.
 - Leitura dos CSV a partir do Volume do Unity Catalog.
 - Persistência em tabelas Delta `*_raw`.
-- Normalização básica de nomes de colunas.
+- Normalização básica de nomes de tabelas.
 
 
 ### 🥈 Silver · dados tratados
