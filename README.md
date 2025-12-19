@@ -4,17 +4,17 @@
   <a href="https://shields.io/">
     <img src="https://img.shields.io/badge/Status-Concluído-green.svg" alt="Status">
   </a>
-  <a href="https://www.databricks.com/">
-    <img src="https://img.shields.io/badge/Databricks-Data%20Platform-orange?logo=databricks&logoColor=white" alt="Databricks">
-  </a>
-  <a href="https://en.wikipedia.org/wiki/Data_engineering">
+    <a href="https://en.wikipedia.org/wiki/Data_engineering">
     <img src="https://img.shields.io/badge/Engenharia%20de%20Dados-Data%20Engineering-blue" alt="Engenharia de Dados">
+  </a>
+  <a href="https://www.databricks.com/">
+    <img src="https://img.shields.io/badge/Databricks-Data%20Platform-red?logo=databricks&logoColor=white" alt="Databricks">
   </a>
   <a href="https://spark.apache.org/">
     <img src="https://img.shields.io/badge/Apache%20Spark-Spark-orange?logo=apachespark&logoColor=white" alt="Apache Spark">
   </a>
   <a href="https://www.postgresql.org/docs/">
-    <img src="https://img.shields.io/badge/SQL-Query%20Language-blue?logo=postgresql&logoColor=white" alt="SQL">
+    <img src="https://img.shields.io/badge/SQL-Query%20Language-yellow?logo=postgresql&logoColor=white" alt="SQL">
   </a>
   <a href="https://pandas.pydata.org/docs/">
     <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-purple?logo=pandas&logoColor=white" alt="Pandas">
@@ -23,7 +23,7 @@
     <img src="https://img.shields.io/badge/Seaborn-Data%20Visualization-lightblue" alt="Seaborn">
   </a>
   <a href="https://geopandas.org/en/stable/">
-    <img src="https://img.shields.io/badge/GeoPandas-Geospatial%20Data-green" alt="GeoPandas">
+    <img src="https://img.shields.io/badge/GeoPandas-Geospatial%20Data-brown" alt="GeoPandas">
   </a>
 </p>
 <p align="center">
