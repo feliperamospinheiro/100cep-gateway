@@ -48,7 +48,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 <h2 align="center">100cep Gateway</h2>
 
 <p align="center">
-  <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
+  <img src="docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
 </p>
 
 A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, criada como cenário de negócio para este MVP de Engenharia de Dados.
@@ -83,10 +83,10 @@ Entregar código + documentação, evidenciando decisões de arquitetura, qualid
 <h2 align="center">Stack técnica</h2>
 
 - **Plataforma de dados:** Databricks (Spark, Delta Lake, Unity Catalog).
-- **Linguagem:** Python.
+- **Linguagem:** Python e SQL.
 - **Processamento:** Apache Spark (SQL / DataFrames) e Pandas para análises pontuais.
 - **Modelagem:** Arquitetura Medallion (Bronze, Silver, Gold) e esquema estrela.
-- **Visualização:** Seaborn / Matplotlib e ferramentas de BI consumindo tabelas Gold.
+- **Visualização:** Seaborn, Matplotlib e Geopandas.
 
 ***
 
@@ -103,6 +103,8 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 > ⚠ Nenhum dado pessoal identificável (PII) real é utilizado.
 
 > ⚠ Escopo 100% educacional e de portfólio.
+
+Fluxo de ingestão: `.databricks/pipeline/notebooks/02_download.ipynb`
 
 ***
 
@@ -135,10 +137,10 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 
 Regras detalhadas de transformação: `docs/documentacao_etl.md`.
 
-Código do diagrama: `./dbdiagram/dbdiagram_schema`
+Código do diagrama: `dbdiagram/dbdiagram_schema`
 
 <p align="center">
-  <img src="./docs/images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
+  <img src="docs/images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
 </p>
 
 ***
@@ -163,17 +165,17 @@ Arquivo de referência: `docs/catalogo.md`.
     - Criar o catálogo `100cep_gateway` (ou adaptar nos scripts).
     - Configurar Unity Catalog e Volumes para staging.
 2. **Rodar os scripts em ordem**
-    - `./.databricks/pipeline/notebooks/01_preparacao.ipynb`
-    - `./.databricks/pipeline/notebooks/02_download.ipynb`
-    - `./.databricks/pipeline/notebooks/03_bronze.ipynb`
-    - `./.databricks/pipeline/notebooks/04_silver.ipynb`
-    - `./.databricks/pipeline/notebooks/05_gold.ipynb`
-    - `./.databricks/pipeline/notebooks/06/qualidade.ipynb`
-    - `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
-    - `./.databricks/pipeline/notebooks/08_catalogo.ipynb`
+    - `.databricks/pipeline/notebooks/01_preparacao.ipynb`
+    - `.databricks/pipeline/notebooks/02_download.ipynb`
+    - `.databricks/pipeline/notebooks/03_bronze.ipynb`
+    - `.databricks/pipeline/notebooks/04_silver.ipynb`
+    - `.databricks/pipeline/notebooks/05_gold.ipynb`
+    - `.databricks/pipeline/notebooks/06/qualidade.ipynb`
+    - `.databricks/pipeline/notebooks/07_perguntas.ipynb`
+    - `.databricks/pipeline/notebooks/08_catalogo.ipynb`
 
 3. **Explorar análises**
-    - Abrir `./.databricks/pipeline/notebooks/07_perguntas.ipynb` e notebooks analíticos para visualizar KPIs e responder às perguntas de negócio.
+    - Abrir `.databricks/pipeline/notebooks/07_perguntas.ipynb` e notebooks analíticos para visualizar KPIs e responder às perguntas de negócio.
 
 ***
 
@@ -187,7 +189,7 @@ A camada Gold foi desenhada para responder perguntas típicas de risco, antifrau
 4. **Quais métodos de pagamento apresentam maior risco de chargeback?** 
 5. **Quais estados apresentam as maiores taxas de chargeback?**  
 
-Detalhes das análises: `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
+Detalhes das análises: `.databricks/pipeline/notebooks/07_perguntas.ipynb`
 
 ***
 
