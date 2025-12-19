@@ -20,7 +20,7 @@ A gestão de dados, permissões e linhagem é feita via Unity Catalog, usando a 
 
 ***
 
-## Preparação do ambiente (`./.databricks/pipeline/notebooks/01_preparacao.ipynb`)
+## Preparação do ambiente: [01_preparacao](.databricks/pipeline/notebooks/01_preparacao.ipynb)
 
 O script de preparação cria e/ou recria o catálogo e schemas, garantindo um ambiente limpo para execução do pipeline.
 Antes de criar, o processo remove (quando existente) o catálogo e seus schemas, evitando resíduos de execuções anteriores que possam impactar a consistência dos dados.
@@ -33,7 +33,7 @@ Antes de criar, o processo remove (quando existente) o catálogo e seus schemas,
 
 ***
 
-## Ingestão de dados e staging (`./.databricks/pipeline/notebooks/02_download.ipynb`)
+## Ingestão de dados e staging: [02_download](.databricks/pipeline/notebooks/02_download.ipynb)
 
 Nesta etapa é feita a ingestão física dos arquivos de dados para o ambiente Databricks, utilizando volumes do Unity Catalog para armazenamento centralizado.
 
@@ -56,7 +56,7 @@ Nesta etapa é feita a ingestão física dos arquivos de dados para o ambiente D
 
 ***
 
-## Camada Bronze — Dados raw estruturados (`./.databricks/pipeline/notebooks/03_bronze.ipynb`)
+## Camada Bronze — Dados raw estruturados: [03_bronze](.databricks/pipeline/notebooks/03_bronze.ipynb)
 
 A camada **Bronze** realiza a ingestão inicial dos arquivos CSV para tabelas Delta, preservando a granularidade e o conteúdo dos dados originais, mas já em estrutura tabular padronizada.
 
@@ -93,7 +93,7 @@ Essas tabelas formam a base histórica e auditável para as transformações nas
 
 ***
 
-## Camada Silver — Dados limpos e integrados (`./.databricks/pipeline/notebooks/04_silver.ipynb`)
+## Camada Silver — Dados limpos e integrados: [04_silver](.databricks/pipeline/notebooks/04_silver.ipynb)
 
 A camada **Silver** aplica regras de limpeza, padronização e enriquecimento sobre as tabelas Bronze, preparando dados prontos para análise e para modelagem dimensional.
 
@@ -124,7 +124,7 @@ Essas tabelas servem como base para as dimensões e fato da camada Gold.
 
 ***
 
-## Camada Gold — Modelo analítico (Star Schema) (`./.databricks/pipeline/notebooks/05_gold.ipynb`)
+## Camada Gold — Modelo analítico (Star Schema): [05_gold](.databricks/pipeline/notebooks/05_gold.ipynb)
 
 A camada **Gold** materializa o modelo analítico em um **esquema estrela**, com tabelas dimensionais e uma tabela fato central para análise de transações, risco e performance comercial.
 
