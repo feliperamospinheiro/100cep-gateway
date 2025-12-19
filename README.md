@@ -51,8 +51,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
 </p>
 
-A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, especializada em processar pagamentos globais de forma rápida, segura e interoperável.
-O conceito **“100cep”** remete à ausência de barreiras de cidade, estado ou país, reforçando o foco em análises por região, método de pagamento e risco de chargeback.
+A 100cep Gateway é uma empresa de infraestrutura de pagamentos borderless, especializada em processar pagamentos globais de forma rápida, segura e interoperável.Nosso objetivo é permitir **transações rápidas**, **seguras** e **sem fronteiras** — afinal, somos _100cep_: sem _cidade_, _estado_ ou _país_ limitando o fluxo dos pagamentos.
 
 ***
 
@@ -92,6 +91,7 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 2. Upload para **Unity Catalog Volumes** no Databricks, compondo a área de *staging* antes da Bronze.
 
 > ⚠ Nenhum dado pessoal identificável (PII) real é utilizado.
+
 > ⚠ Escopo 100% educacional e de portfólio.
 
 ***
@@ -117,7 +117,9 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 
 - Dimensões: clientes, vendedores, pagamentos, data, geolocalização, chargebacks.
 - Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
-- Modelagem dos dados em Star Schema.
+- Modelagem dos dados em Star Schema, conforme indicado na imagem abaixo criada no site dbdiagram.io.
+
+Código do diagrama: `./dbdiagram/dbdiagram_schema`
 
 <p align="center">
   <img src="./docs/images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
@@ -218,6 +220,7 @@ Arquivo: `docs/autoavalicao.md`.
 ## 📎 Créditos
 
 Dataset: *[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)* — Olist \& André Sionek.
+
 DOI: *[10.34740/kaggle/dsv/195341](https://doi.org/10.34740/kaggle/dsv/195341)* — Licença *[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*.
 
 <div align="center">⁂</div>

@@ -1,0 +1,61 @@
+Table dim_clientes {
+  cliente_id varchar [pk, not null]
+  cep_prefixo int
+}
+
+Table dim_vendedores {
+  vendedor_id varchar [pk, not null]
+  cep_prefixo int
+}
+
+Table dim_geolocalizacao {
+  cep_prefixo int [pk, not null]
+  cidade varchar
+  estado varchar
+  latitude varchar
+  longitude varchar
+}
+
+Table dim_data {
+  data_calendario date [pk, not null]
+  dia int
+  mes int
+  ano int
+  nome_dia_semana varchar
+  nome_mes varchar
+}
+
+Table dim_chargebacks {
+  pedido_id varchar [pk, not null]
+  motivo_chargeback varchar
+  status_chargeback varchar
+  resposta_emitente varchar
+  resposta_adquirente varchar
+}
+
+Table fato_transacoes {
+  pedido_id varchar [pk, not null]
+  cliente_id varchar [not null]
+  vendedor_id varchar [not null]
+  data_pedido date [not null]
+  horario_pedido varchar [not null] 
+  valor_transacao decimal(12,2) [not null]
+  preco_total decimal(16,2) [not null]
+  frete_total decimal(15,2) [not null]
+  status_pedido varchar [not null]
+}
+
+// Relacionamentos dimensões -> fato
+Ref: dim_clientes.cliente_id < fato_transacoes.cliente_id
+
+Ref: dim_vendedores.vendedor_id < fato_transacoes.vendedor_id
+
+Ref: dim_data.data_calendario < fato_transacoes.data_pedido
+
+// Relacionamentos geolocalização
+Ref: dim_geolocalizacao.cep_prefixo < dim_clientes.cep_prefixo
+
+Ref: dim_geolocalizacao.cep_prefixo < dim_vendedores.cep_prefixo
+
+// Muitos pedidos -> 1 chargeback (ou nenhum se pedido_id for null)
+Ref: dim_chargebacks.pedido_id < fato_transacoes.pedido_id
