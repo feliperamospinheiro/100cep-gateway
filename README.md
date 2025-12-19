@@ -49,18 +49,17 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 📁 100cep-gateway
 ├── 📁 .databricks
 │   └── 📁 pipeline
-│       ├── 📁 html
-│       └── 📁 notebooks
-├── 📁 .vscode
-├── 📁 datasets
-│   ├── 📁 ai_dataset
-│   └── 📁 olist_dataset
-├── 📁 dbdiagram
-├── 📁 docs
-│   └── 📁 images
-│       ├── 📁 databricks
-│       ├── 📁 dbdiagram
-│       └── 📁 logo
+│       ├── 📁 html # contém os arquivos databricks em formato .html
+│       └── 📁 notebooks # contém os arquivos databricks em formato .ipynb
+├── 📁 datasets 
+│   ├── 📁 ai_dataset # contém o dataset gerado pelo modelo OpenAI 5.0
+│   └── 📁 olist_dataset # contém os datasets Brazilian E-Commerce Public Dataset by Olist
+├── 📁 dbdiagram # código realizado no dbdiagram.io
+├── 📁 docs # documentos relevantes para o MVP
+├──  📁 images
+│    ├── 📁 databricks # evidências do databricks
+│    ├── 📁 dbdiagram # schema do dbdiagram.io
+│    └── 📁 logo # logo da 100cep Gateway
 ```
 
 
