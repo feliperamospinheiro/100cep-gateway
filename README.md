@@ -123,7 +123,7 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 
 > ⚠ Escopo 100% educacional e de portfólio.
 
-Fluxo de ingestão: [Download Kaggle](.databricks/pipeline/notebooks/02_download.ipynb)
+Fluxo de ingestão: [02_download](.databricks/pipeline/notebooks/02_download.ipynb)
 
 ***
 
@@ -154,7 +154,7 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
 - Modelagem dos dados em Star Schema, conforme indicado na imagem abaixo criada no site dbdiagram.io.
 
-Regras detalhadas de transformação: [Documentação do ETL](`documentacao_etl.md`).
+Regras detalhadas de transformação: [Documentação do ETL](documentacao_etl.md).
 
 Código do diagrama: [Dbdiagram Schema](dbdiagram/dbdiagram_schema)
 
@@ -172,7 +172,7 @@ O projeto inclui um **Data Catalog** documentando:
 - Domínio esperado, faixas de valores e categorias.
 - Descrição funcional e camada de origem.
 
-Arquivo de referência: [Data Catalog](catalogo.md)
+Arquivo de referência: [Catálogo dos Dados](catalogo.md)
 
 ***
 
@@ -223,7 +223,7 @@ Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões t�
 - Principais desafios (performance, modelagem, ferramentas).
 - Próximos passos;
 
-Arquivo: [Autoavaliação](autoavalicao.md).
+Arquivo: [Autoavaliação](autoavaliacao.md).
 
 ***
 
