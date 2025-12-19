@@ -154,7 +154,7 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
 - Modelagem dos dados em Star Schema, conforme indicado na imagem abaixo criada no site dbdiagram.io.
 
-Regras detalhadas de transformação: [Documentação do ETL](documentacao_etl.md).
+Regras detalhadas de transformação: [Documentação do ETL](documentacao_etl.md)
 
 Código do diagrama: [Dbdiagram Schema](dbdiagram/dbdiagram_schema)
 
@@ -223,7 +223,7 @@ Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões t�
 - Principais desafios (performance, modelagem, ferramentas).
 - Próximos passos;
 
-Arquivo: [Autoavaliação](autoavaliacao.md).
+Arquivo: [Autoavaliação](autoavaliacao.md)
 
 ***
 
