@@ -45,13 +45,24 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 ***
 
-## 🏛️ Sobre a 100cep Gateway
+## 🏛️ A 100cep Gateway
 
 <p align="center">
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
 </p>
 
-A 100cep Gateway é uma empresa de infraestrutura de pagamentos borderless, especializada em processar pagamentos globais de forma rápida, segura e interoperável.Nosso objetivo é permitir **transações rápidas**, **seguras** e **sem fronteiras** — afinal, somos _100cep_: sem _cidade_, _estado_ ou _país_ limitando o fluxo dos pagamentos.
+A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, criada como cenário de negócio para este MVP de Engenharia de Dados.
+
+O foco da 100cep não é apenas “processar pagamentos”, mas **entender o risco, o comportamento de chargebacks e a saúde da operação transacional** em múltimos métodos de pagamento, regiões e perfis de clientes.
+
+No contexto deste projeto, a 100cep Gateway é posicionada como uma plataforma que:
+
+- intermedia pagamentos de e-commerce entre clientes, sellers e provedores financeiros;
+- monitora indicadores críticos como taxas de aprovação, faturamento e principalmente **taxas de chargeback**;
+- utiliza dados históricos de pedidos, pagamentos, logística e reclamações para orientar decisões de risco, antifraude e estratégia comercial.
+
+O nome **“100cep”** reforça a ideia de uma operação sem fronteiras — sem cidade, estado ou país limitando o fluxo de pagamentos — e justifica a presença de dimensões de geolocalização e análises por região e método de pagamento na camada analítica.
+
 
 ***
 
