@@ -45,7 +45,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 ***
 
-<h2 align="center">A 100cep Gateway</h2>
+<h2 align="center">100cep Gateway</h2>
 
 <p align="center">
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
@@ -53,7 +53,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, criada como cenário de negócio para este MVP de Engenharia de Dados.
 
-O foco da 100cep não é apenas “processar pagamentos”, mas **entender o risco, o comportamento de chargebacks e a saúde da operação transacional** em múltimos métodos de pagamento, regiões e perfis de clientes.
+O foco da 100cep não é apenas “processar pagamentos”, mas **entender o risco, o comportamento de chargebacks e a saúde da operação transacional** em métodos de pagamento, regiões e perfis de clientes.
 
 No contexto deste projeto, a 100cep Gateway é posicionada como uma plataforma que:
 
