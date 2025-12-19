@@ -213,7 +213,9 @@ Arquivo: `docs/autoavalicao.md`.
 
 ## 👤 Autor
 
-**Felipe Pinheiro** — projeto desenvolvido no contexto da Pós-graduação em Data Science & Analytics (PUC-Rio).
+**Felipe Pinheiro** 
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:felipervmospinheiro@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/feliperamospinheiro)
 
 ***
 
