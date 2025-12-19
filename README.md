@@ -13,10 +13,10 @@
   <a href="https://spark.apache.org/">
     <img src="https://img.shields.io/badge/Apache%20Spark-Spark-orange?logo=apachespark&logoColor=white" alt="Apache Spark">
   </a>
-  <a href="https://www.postgresql.org/docs/">
+  <a href="https://www.postgresql.org/">
     <img src="https://img.shields.io/badge/SQL-Query%20Language-yellow?logo=postgresql&logoColor=white" alt="SQL">
   </a>
-  <a href="https://pandas.pydata.org/docs/">
+  <a href="https://pandas.pydata.org/">
     <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-purple?logo=pandas&logoColor=white" alt="Pandas">
   </a>
   <a href="https://seaborn.pydata.org/">
@@ -54,8 +54,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 ├── 📁 datasets 
 │   ├── 📁 ai_dataset # contém o dataset gerado pelo modelo OpenAI 5.0
 │   └── 📁 olist_dataset # contém os datasets Brazilian E-Commerce Public Dataset by Olist
-├── 📁 dbdiagram # código realizado no dbdiagram.io
-├── 📁 docs # documentos relevantes para o MVP
+├── 📁 dbdiagram # contém o código realizado no dbdiagram.io
 ├──  📁 images
 │    ├── 📁 databricks # evidências do databricks
 │    ├── 📁 dbdiagram # schema do dbdiagram.io
@@ -68,7 +67,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 <h2 align="center">100cep Gateway</h2>
 
 <p align="center">
-  <img src="docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
+  <img src="images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
 </p>
 
 A **100cep Gateway** é uma empresa fictícia de infraestrutura de pagamentos *borderless*, criada como cenário de negócio para este MVP de Engenharia de Dados.
@@ -124,7 +123,7 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 
 > ⚠ Escopo 100% educacional e de portfólio.
 
-Fluxo de ingestão: `.databricks/pipeline/notebooks/02_download.ipynb`
+Fluxo de ingestão: [Download Kaggle](.databricks/pipeline/notebooks/02_download.ipynb)
 
 ***
 
@@ -155,12 +154,12 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
 - Modelagem dos dados em Star Schema, conforme indicado na imagem abaixo criada no site dbdiagram.io.
 
-Regras detalhadas de transformação: `docs/documentacao_etl.md`.
+Regras detalhadas de transformação: [Documentação do ETL](`documentacao_etl.md`).
 
-Código do diagrama: `dbdiagram/dbdiagram_schema`
+Código do diagrama: [Dbdiagram Schema](dbdiagram/dbdiagram_schema)
 
 <p align="center">
-  <img src="docs/images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
+  <img src="images/dbdiagram/star_schema.jpg" alt="Logo 100cep Gateway" width="100%">
 </p>
 
 ***
@@ -173,7 +172,7 @@ O projeto inclui um **Data Catalog** documentando:
 - Domínio esperado, faixas de valores e categorias.
 - Descrição funcional e camada de origem.
 
-Arquivo de referência: `docs/catalogo.md`.
+Arquivo de referência: [Data Catalog](catalogo.md)
 
 ***
 
@@ -181,21 +180,24 @@ Arquivo de referência: `docs/catalogo.md`.
 
 > Ajuste nomes de catálogo/schema e caminhos conforme o seu workspace Databricks.
 
+> Necessidade de upload manual da tabela [chargebacks_dataset](datasets/ai_dataset/chargebacks_dataset.csv) no volume imdb.
+
 1. **Configurar ambiente**
     - Criar o catálogo `100cep_gateway` (ou adaptar nos scripts).
     - Configurar Unity Catalog e Volumes para staging.
 2. **Rodar os scripts em ordem**
-    - `.databricks/pipeline/notebooks/01_preparacao.ipynb`
-    - `.databricks/pipeline/notebooks/02_download.ipynb`
-    - `.databricks/pipeline/notebooks/03_bronze.ipynb`
-    - `.databricks/pipeline/notebooks/04_silver.ipynb`
-    - `.databricks/pipeline/notebooks/05_gold.ipynb`
-    - `.databricks/pipeline/notebooks/06/qualidade.ipynb`
-    - `.databricks/pipeline/notebooks/07_perguntas.ipynb`
-    - `.databricks/pipeline/notebooks/08_catalogo.ipynb`
+    - [01_preparacao](.databricks/pipeline/notebooks/01_preparacao.ipynb)
+    - [02_download](.databricks/pipeline/notebooks/02_download.ipynb)
+    - [03_bronze](.databricks/pipeline/notebooks/03_bronze.ipynb)
+    - [04_silver](.databricks/pipeline/notebooks/04_silver.ipynb)
+    - [05_gold](.databricks/pipeline/notebooks/05_gold.ipynb)
 
 3. **Explorar análises**
-    - Abrir `.databricks/pipeline/notebooks/07_perguntas.ipynb` e notebooks analíticos para visualizar KPIs e responder às perguntas de negócio.
+    - Abrir [06_qualidade](.databricks/pipeline/notebooks/06_qualidade.ipynb) para explorar a análise de qualidade.
+    - Abrir [07_perguntas](.databricks/pipeline/notebooks/07_perguntas.ipynb) para responder às perguntas de negócio.
+
+4. **Explorar Comentários**
+    - Abrir [08_catalogo](.databricks/pipeline/notebooks/08_catalogo.ipynb) para adicionar comentários nas tabelas de todas as camadas.
 
 ***
 
@@ -209,7 +211,7 @@ A camada Gold foi desenhada para responder perguntas típicas de risco, antifrau
 4. **Quais métodos de pagamento apresentam maior risco de chargeback?** 
 5. **Quais estados apresentam as maiores taxas de chargeback?**  
 
-Detalhes das análises: `.databricks/pipeline/notebooks/07_perguntas.ipynb`
+Detalhes das análises: [Perguntas de Negócio](.databricks/pipeline/notebooks/07_perguntas.ipynb)
 
 ***
 
@@ -221,7 +223,7 @@ Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões t�
 - Principais desafios (performance, modelagem, ferramentas).
 - Próximos passos;
 
-Arquivo: `docs/autoavalicao.md`.
+Arquivo: [Autoavaliação](autoavalicao.md).
 
 ***
 
