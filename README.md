@@ -32,7 +32,7 @@
 
 ***
 
-## Visão geral
+<h2 align="center">Visão geral</h2>
 
 Projeto desenvolvido como parte da **sprint de Engenharia de Dados** do programa de **Pós-graduação em Data Science \& Analytics da PUC-Rio**, pensado para compor o portfólio com um caso completo de pipeline analítico em ambiente de Data Lakehouse.
 O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, processamento, conciliação e chargebacks, com foco em boas práticas de modelagem, governança e observabilidade de dados.
@@ -45,7 +45,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 ***
 
-## A 100cep Gateway
+<h2 align="center">A 100cep Gateway</h2>
 
 <p align="center">
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
@@ -66,7 +66,7 @@ O nome **“100cep”** reforça a ideia de uma operação sem fronteiras — se
 
 ***
 
-## Contexto acadêmico e objetivos
+<h2 align="center">Contexto acadêmico e objetivos</h2>
 
 Este projeto foi desenvolvido no contexto da pós-graduação em **Data Science \& Analytics (PUC-Rio)**, com foco em engenharia de dados aplicada.
 
@@ -80,8 +80,7 @@ Criar camadas analíticas para monitorar chargebacks, GMV, ticket médio e métr
 Entregar código + documentação, evidenciando decisões de arquitetura, qualidade de dados e modelagem dimensional.
 
 ***
-
-## 4. Stack técnica
+<h2 align="center">Stack técnica</h2>
 
 - **Plataforma de dados:** Databricks (Spark, Delta Lake, Unity Catalog).
 - **Linguagem:** Python.
@@ -91,7 +90,7 @@ Entregar código + documentação, evidenciando decisões de arquitetura, qualid
 
 ***
 
-## Dataset
+<h2 align="center">Dataset</h2>
 
 Os dados são baseados no **Brazilian E-Commerce Public Dataset by Olist**, amplamente utilizado em estudos de ciência e engenharia de dados.
 O projeto também utiliza um dataset sintético de chargebacks para simular risco e fraude, sem qualquer dado sensível real.
@@ -144,7 +143,7 @@ Código do diagrama: `./dbdiagram/dbdiagram_schema`
 
 ***
 
-## Catálogo de dados
+<h2 align="center">Catálogo de dados</h2>
 
 O projeto inclui um **Data Catalog** documentando:
 
@@ -156,7 +155,7 @@ Arquivo de referência: `docs/catalogo.md`.
 
 ***
 
-## Como executar
+<h2 align="center">Como executar</h2>
 
 > Ajuste nomes de catálogo/schema e caminhos conforme o seu workspace Databricks.
 
@@ -178,7 +177,7 @@ Arquivo de referência: `docs/catalogo.md`.
 
 ***
 
-## Perguntas de negócio
+<h2 align="center">Perguntas de negócio</h2>
 
 A camada Gold foi desenhada para responder perguntas típicas de risco, antifraude e receita em um gateway de pagamentos.
 
@@ -192,23 +191,19 @@ Detalhes das análises: `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
 
 ***
 
-## Autoavaliação
+<h2 align="center">Autoavaliação</h2>
 
 Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões técnicas e acadêmicas.
 
 - O que foi cumprido dentro do escopo da sprint.
 - Principais desafios (performance, modelagem, ferramentas).
-- Ideias de evolução:
-    - ingestão em streaming;
-    - orquestração com jobs;
-    - testes automatizados e data quality contínuo;
-    - dashboards em produção.
+- Próximos passos;
 
 Arquivo: `docs/autoavalicao.md`.
 
 ***
 
-## Autor
+<h2 align="center">Autor</h2>
 
 **Felipe Pinheiro** 
 
@@ -216,7 +211,7 @@ Arquivo: `docs/autoavalicao.md`.
 
 ***
 
-## Créditos
+<h2 align="center">Créditos</h2>
 
 Dataset: *[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)* — Olist \& André Sionek.
 
