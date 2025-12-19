@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://shields.io/">
-    <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow.svg" alt="Status">
+    <img src="https://img.shields.io/badge/concluído-green.svg" alt="Status">
   </a>
   <a href="https://www.databricks.com/">
     <img src="https://img.shields.io/badge/Databricks-Data%20Platform-orange?logo=databricks&logoColor=white" alt="Databricks">
@@ -32,7 +32,7 @@
 
 ***
 
-## 🎯 Visão geral
+## Visão geral
 
 Projeto desenvolvido como parte da **sprint de Engenharia de Dados** do programa de **Pós-graduação em Data Science \& Analytics da PUC-Rio**, pensado para compor o portfólio com um caso completo de pipeline analítico em ambiente de Data Lakehouse.
 O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, processamento, conciliação e chargebacks, com foco em boas práticas de modelagem, governança e observabilidade de dados.
@@ -45,7 +45,7 @@ O MVP simula o pipeline transacional da **100cep Gateway**, cobrindo ingestão, 
 
 ***
 
-## 🏛️ A 100cep Gateway
+## A 100cep Gateway
 
 <p align="center">
   <img src="./docs/images/logo/100cep-gateway.png" alt="Logo 100cep Gateway" width="100%">
@@ -66,7 +66,7 @@ O nome **“100cep”** reforça a ideia de uma operação sem fronteiras — se
 
 ***
 
-## 🎓 Contexto acadêmico e objetivos
+## Contexto acadêmico e objetivos
 
 Este projeto foi desenvolvido no contexto da pós-graduação em **Data Science \& Analytics (PUC-Rio)**, com foco em engenharia de dados aplicada.
 
@@ -81,7 +81,7 @@ Entregar código + documentação, evidenciando decisões de arquitetura, qualid
 
 ***
 
-## 🧱 Stack técnica
+## 4. Stack técnica
 
 - **Plataforma de dados:** Databricks (Spark, Delta Lake, Unity Catalog).
 - **Linguagem:** Python.
@@ -91,7 +91,7 @@ Entregar código + documentação, evidenciando decisões de arquitetura, qualid
 
 ***
 
-## 📦 Dados utilizados
+## Dataset
 
 Os dados são baseados no **Brazilian E-Commerce Public Dataset by Olist**, amplamente utilizado em estudos de ciência e engenharia de dados.
 O projeto também utiliza um dataset sintético de chargebacks para simular risco e fraude, sem qualquer dado sensível real.
@@ -107,7 +107,7 @@ O projeto também utiliza um dataset sintético de chargebacks para simular risc
 
 ***
 
-## 🏗️ Arquitetura e modelagem
+## Arquitetura e modelagem
 
 O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetura **Medallion** (Bronze, Silver, Gold), com governança via Unity Catalog.
 
@@ -115,6 +115,9 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 
 - CSVs armazenados em Delta quase “como chegaram”.
 - Foco em auditabilidade e possibilidade de reprocessamento.
+- Leitura dos CSV a partir do Volume do Unity Catalog.
+- Persistência em tabelas Delta `*_raw`.
+- Normalização básica de nomes de colunas.
 
 
 ### 🥈 Silver · dados tratados
@@ -122,6 +125,7 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Padronização de tipos e normalização de chaves.
 - Tratamento de nulos e deduplicação.
 - Criação de tabelas temáticas (pedidos, pagamentos, clientes, itens).
+- Criação de relacionamentos entre pedidos, pagamentos, itens, clientes e sellers.
 
 
 ### 🥇 Gold · modelo analítico
@@ -129,6 +133,8 @@ O projeto adota um modelo **Lakehouse** em Databricks, estruturado na arquitetur
 - Dimensões: clientes, vendedores, pagamentos, data, geolocalização, chargebacks.
 - Fato: `fato_transacoes`, consolidando pedidos, valores, status e vínculo com chargebacks.
 - Modelagem dos dados em Star Schema, conforme indicado na imagem abaixo criada no site dbdiagram.io.
+
+Regras detalhadas de transformação: `docs/documentacao_etl.md`.
 
 Código do diagrama: `./dbdiagram/dbdiagram_schema`
 
@@ -138,39 +144,19 @@ Código do diagrama: `./dbdiagram/dbdiagram_schema`
 
 ***
 
-## 📚 Catálogo de dados
+## Catálogo de dados
 
 O projeto inclui um **Data Catalog** documentando:
 
 - Nome e tipo de cada coluna.
 - Domínio esperado, faixas de valores e categorias.
 - Descrição funcional e camada de origem.
-- Linhagem Bronze → Silver → Gold.
 
 Arquivo de referência: `docs/catalogo.md`.
 
 ***
 
-## 🔄 Pipeline de carga (ETL / ELT)
-
-A carga foi organizada em etapas claras, refletindo as camadas do Lakehouse.
-
-1. **Ingestão — Bronze**
-    - Leitura dos CSV a partir do Volume do Unity Catalog.
-    - Persistência em tabelas Delta `*_raw`.
-    - Normalização básica de nomes de colunas.
-2. **Transformação — Silver**
-    - Limpeza, tipagem, tratamento de nulos e deduplicação.
-    - Criação de relacionamentos entre pedidos, pagamentos, itens, clientes e sellers.
-3. **Modelagem — Gold**
-    - Construção das dimensões e da `fato_transacoes`.
-    - Preparação de visões finais para consumo em BI e notebooks analíticos.
-
-Regras detalhadas de transformação: `docs/documentacao_etl.md`.
-
-***
-
-## ▶️ Como executar
+## Como executar
 
 > Ajuste nomes de catálogo/schema e caminhos conforme o seu workspace Databricks.
 
@@ -192,21 +178,21 @@ Regras detalhadas de transformação: `docs/documentacao_etl.md`.
 
 ***
 
-## 🔍 Perguntas de negócio
+## Perguntas de negócio
 
 A camada Gold foi desenhada para responder perguntas típicas de risco, antifraude e receita em um gateway de pagamentos.
 
-1. Qual o método de pagamento mais utilizado pelos clientes da 100cep Gateway?
-2. Qual o histórico de faturamento ao longo do período analisado?
-3. Qual a proporção de pedidos com e sem solicitação de chargeback?
-4. Quais métodos de pagamento apresentam maior risco de chargeback?
-5. Quais estados ou regiões concentram as maiores taxas de chargeback?
+1. **Qual o método de pagamento mais utilizado pelos clientes da 100cep Gateway?**  
+2. **Qual o histórico de faturamento do ano de 2017?**  
+3. **Qual a proporção de pedidos com e sem solicitação de chargeback?**
+4. **Quais métodos de pagamento apresentam maior risco de chargeback?** 
+5. **Quais estados apresentam as maiores taxas de chargeback?**  
 
 Detalhes das análises: `./.databricks/pipeline/notebooks/07_perguntas.ipynb`
 
 ***
 
-## 📝 Autoavaliação e próximos passos
+## Autoavaliação
 
 Como parte da sprint, o projeto inclui uma **autoavaliação** com reflexões técnicas e acadêmicas.
 
@@ -222,7 +208,7 @@ Arquivo: `docs/autoavalicao.md`.
 
 ***
 
-## 👤 Autor
+## Autor
 
 **Felipe Pinheiro** 
 
@@ -230,7 +216,7 @@ Arquivo: `docs/autoavalicao.md`.
 
 ***
 
-## 📎 Créditos
+## Créditos
 
 Dataset: *[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)* — Olist \& André Sionek.
 
