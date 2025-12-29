@@ -1,6 +1,6 @@
 <h1 align="center">Autoavaliação</h1>
 
-## 1. Objetivos atingidos
+<h2 align="center">Objetivos atingidos</h1>
 
 Este MVP cumpriu os principais objetivos definidos para a sprint, tanto do ponto de vista acadêmico quanto de portfólio profissional. 
 
@@ -11,7 +11,7 @@ Este MVP cumpriu os principais objetivos definidos para a sprint, tanto do ponto
 
 ---
 
-## 2. Dificuldades encontradas
+<h2 align="center">Dificuldades encontradas</h1>
 
 Ao longo do desenvolvimento, surgiram desafios típicos de projetos de Engenharia de Dados em ambiente cloud, além do aprendizado prático de novas ferramentas. 
 
@@ -29,7 +29,7 @@ Ao longo do desenvolvimento, surgiram desafios típicos de projetos de Engenhari
 
 ---
 
-## 3. Pontos fortes
+<h2 align="center">Pontos fortes</h1>
 
 Mesmo com as limitações, alguns pontos se destacam positivamente no escopo específico de Engenharia de Dados. 
 
@@ -47,7 +47,7 @@ Mesmo com as limitações, alguns pontos se destacam positivamente no escopo esp
 
 ---
 
-## 5. Aprendizados
+<h2 align="center">Aprendizados</h1>
 
 O desenvolvimento deste MVP trouxe aprendizados específicos para atuação como engenheiro de dados. 
 
@@ -62,7 +62,7 @@ O desenvolvimento deste MVP trouxe aprendizados específicos para atuação como
 
 ---
 
-## 6. Próximos passos
+<h2 align="center">Próximos passos</h1>
 
 Como evolução natural deste MVP, alguns próximos passos alinhados ao papel de Engenharia de Dados são: 
 
