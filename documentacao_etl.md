@@ -167,6 +167,40 @@ A linhagem do pipeline pode ser resumida como:
 - **Gold (analytics)**
     - Modelo dimensional com `dim_clientes`, `dim_vendedores`, `dim_pagamentos`, `dim_data`, `dim_geolocalizacao`, `dim_chargebacks` e `fato_transacoes`.
 
+### Fluxo de Transformação
+
+```
+📂 Kaggle CSV Files
+    ↓
+💾 Unity Catalog Volumes
+    ↓
+🟫 Bronze Layer (Raw)
+    ├─ bronze_customers
+    ├─ bronze_orders
+    ├─ bronze_order_payments
+    ├─ bronze_order_items
+    ├─ bronze_sellers
+    ├─ bronze_geolocation
+    └─ bronze_chargebacks
+    ↓
+🧹 Silver Layer (Cleaned)
+    ├─ silver_customers      [limpeza + validação]
+    ├─ silver_orders        [conversão temporal]
+    ├─ silver_order_payments [agregação]
+    ├─ silver_order_items    [agregação]
+    ├─ silver_sellers       [padronização]
+    ├─ silver_geolocation   [deduplicação]
+    └─ silver_chargebacks   [enriquecimento]
+    ↓
+🏆 Gold Layer (Analytics)
+    ├─ fato_transacoes
+    ├─ dim_data
+    ├─ dim_clientes
+    ├─ dim_vendedores
+    ├─ dim_geolocalizacao
+    └─ dim_chargebacks
+```
+
 ***
 
 ## Scripts do pipeline

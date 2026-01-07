@@ -9,7 +9,7 @@ Este MVP cumpriu os principais objetivos definidos para a sprint, tanto do ponto
 - Modelar a camada Gold em **esquema estrela**, com `fato_transacoes` e dimensões de clientes, vendedores, pagamentos, data, geolocalização e chargebacks. 
 - Documentar o projeto para uso como **peça de portfólio**, incluindo README, documentação de ETL, catálogo de dados e esta autoavaliação. 
 
----
+***
 
 <h2 align="center">Dificuldades encontradas</h1>
 
@@ -27,7 +27,7 @@ Ao longo do desenvolvimento, surgiram desafios típicos de projetos de Engenhari
 - **Ausência de orquestração completa e data quality automatizado**  
   O pipeline ainda não está integrado a uma esteira de jobs com monitoramento, logs e alertas, nem possui um framework formal de data quality com regras declarativas e relatórios automáticos por camada. 
 
----
+***
 
 <h2 align="center">Pontos fortes</h1>
 
@@ -45,7 +45,7 @@ Mesmo com as limitações, alguns pontos se destacam positivamente no escopo esp
 - **Documentação pensada para portfólio**  
   A preocupação com README, documentação de ETL, catálogo e autoavaliação reforça a habilidade de comunicar arquitetura e decisões técnicas, algo essencial para Engenharia de Dados moderna. 
 
----
+***
 
 <h2 align="center">Aprendizados</h1>
 
@@ -60,7 +60,7 @@ O desenvolvimento deste MVP trouxe aprendizados específicos para atuação como
 - **Uso disciplinado de Spark e Lakehouse**  
   A prática reforçou a diferença entre processamento local e distribuído, e a importância de schema, tipos e governança (catálogo, camadas) para evitar problemas futuros. 
 
----
+***
 
 <h2 align="center">Próximos passos</h1>
 
@@ -71,4 +71,4 @@ Como evolução natural deste MVP, alguns próximos passos alinhados ao papel de
 - Adotar uma camada formal de **data quality** com métricas, thresholds e relatórios recorrentes. 
 - Realizar **tuning de performance** e análise de custo em cenários com dados maiores e configurações diferentes de cluster. 
 
----
+***

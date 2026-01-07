@@ -1,6 +1,25 @@
 
 <h1 align="center">Catálogo de Dados</h1>
 
+Este documento contém a **documentação completa** do modelo de dados da camada **Gold** do MVP 100cep Gateway. O modelo foi estruturado seguindo princípios de **Data Warehouse dimensional**, otimizado para análises de negócio.
+
+***
+
+### Tabela de Relacionamentos
+
+| Tabela Origem | Coluna FK | Tabela Destino | Coluna PK | Cardinalidade |
+|--------------|-----------|----------------|-----------|---------------|
+| **fato_transacoes** | cliente_id | dim_clientes | cliente_id | N:1 |
+| **fato_transacoes** | vendedor_id | dim_vendedores | vendedor_id | N:1 |
+| **fato_transacoes** | data_pedido | dim_data | data_calendario | N:1 |
+| **fato_transacoes** | pedido_id | dim_chargebacks | pedido_id | N:0,1 |
+| **dim_clientes** | cep_prefixo | dim_geolocalizacao | cep_prefixo | N:1 |
+| **dim_vendedores** | cep_prefixo | dim_geolocalizacao | cep_prefixo | N:1 |
+
+**Obs**: Nem todos os pedidos possuem chargeback.
+
+***
+
 <h2 align="center">dim_chargebacks</h2>
 
 <p align="center"> <img src="./images/databricks/dim_chargebacks.jpg" alt="dim_chargebacks" width="100%"></p>
