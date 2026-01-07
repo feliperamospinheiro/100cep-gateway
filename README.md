@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/Status-Concluído-green.svg" alt="Status">
   </a>
     <a href="https://en.wikipedia.org/wiki/Data_engineering">
-    <img src="https://img.shields.io/badge/Engenharia%20de%20Dados-Data%20Engineering-blue" alt="Engenharia de Dados">
+    <img src="https://img.shields.io/badge/Engenharia%20de%20Dados-blue" alt="Engenharia de Dados">
   </a>
   <a href="https://www.databricks.com/">
     <img src="https://img.shields.io/badge/Databricks-Data%20Platform-red?logo=databricks&logoColor=white" alt="Databricks">
